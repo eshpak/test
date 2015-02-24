@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+        <!--  HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <style>
+            .wrapper {
+                width:60%;
+                margin:0 auto;
+                font-size:16px;
+            }
+            .header {
+                margin:50px 0;
+            }
+            .table tr > *:first-child{
+                width:20%;
+            }
+            .loading > td:first-child {
+                padding-left:30px;
+                background:url(images/loading.gif) 5px 50% no-repeat;
+            }
+            .table .mail-line:hover td {
+                cursor:pointer;
+                background:#f0f8ff;
+            }
+            .logo {
+                margin-right:7px;
+            }
+            .logo-mail:before {
+                content:'M';
+                color:blue;
+            }
+            .logo-yandex:before {
+                content:'Я';
+                color:red;
+            }
+            .logo-google:before {
+                content:'G';
+                color:green;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1 class="header">Васина почта</h1>
+            <div class="tabbable tabs-left js-mails-container">
+
+
+                <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <h4 class="modal-title js-theme" id="myModalLabel"></h4>
+                                <p class="js-sender"></p>
+                            </div>
+                            <div class="modal-body">
+                                <p class="js-text"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#incomePane" data-toggle="tab">Входящие</a></li>
+                    <li><a href="#outcomePane" data-toggle="tab">Исходящие</a></li>
+                    <li><a href="#trashPane" data-toggle="tab">Корзина</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="incomePane" class="tab-pane active js-tab-pane">
+                        <table data-brick-num="-1" class="table js-income">
+                            <thead>
+                                <tr>
+                                    <th>Адресат</th>
+                                    <th>Тема</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="loading js-loading hide">
+                                    <td colspan="2">Подождите, идет загрузка писем</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="outcomePane" class="tab-pane js-tab-pane">
+                        <table data-brick-num="-1"  class="table js-outcome">
+                            <thead>
+                                <tr>
+                                    <th>Адресат</th>
+                                    <th>Тема</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div id="trashPane" class="tab-pane js-tab-pane">
+                        <table data-brick-num="-1"  class="table js-trash">
+                            <thead>
+                                <tr>
+                                    <th>Адресат</th>
+                                    <th>Тема</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.container -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="js/common.js"></script>
+    </body>
+</html>
